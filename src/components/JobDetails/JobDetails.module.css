@@ -1,0 +1,84 @@
+.container {
+    width: 80vw;
+    position: fixed;
+    top: 15vh;
+    left: 10vw;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 2rem 1rem;
+    background-color: white;
+    box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    text-align: center;
+}
+
+.containerBottom {
+    width: 80vw;
+    margin: 40vh auto;
+    background-color: white;
+    box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+.lightText {
+    color: #999999;
+}
+
+.containerText {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.boldText {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.locationText {
+    color: #ED5353;
+    margin-top: 0.5rem;
+}
+
+.info {
+    margin: 1.5rem auto;
+}
+
+.info h2 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 0.6rem;
+}
+
+.info p {
+    font-size: 18px;
+}
+
+.perks {
+    display: flex;
+    gap: 4rem;
+    margin-top: 1rem;
+}
+
+.skill {
+    background-color: #FFEEEE;
+    color: black;
+    padding: 0.6rem;
+    border-radius: 9999px;
+    margin-right: 1rem;
+}
+
+
+.edit {
+    background: #ED5353;
+    border-radius: 6.50784px;
+    padding: 1em 2em;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+}
