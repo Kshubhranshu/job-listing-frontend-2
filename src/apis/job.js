@@ -11,3 +11,16 @@ export const getJobDetailsById = async (jobId) => {
         // toast something went wrong please try after sometime
     }
 };
+
+export const createJobPost = async (jobPostPayload) => {
+    try {
+        const reqUrl = `${backendUrl}/job/create`;
+        const token = localStorage.getItem("token");
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        const response = await axios.post(reqUrl, jobPostPayload);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        // toast something went wrong please try after sometime
+    }
+};
