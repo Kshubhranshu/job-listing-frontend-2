@@ -17,7 +17,8 @@ export default function Login() {
         }
 
         const response = await loginUser(formData.email, formData.password);
-        if (response.name) {
+        if (response?.name) {
+            localStorage.setItem("token", response?.token);
             navigate("/");
         }
     };

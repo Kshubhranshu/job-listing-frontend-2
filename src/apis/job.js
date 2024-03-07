@@ -24,3 +24,16 @@ export const createJobPost = async (jobPostPayload) => {
         // toast something went wrong please try after sometime
     }
 };
+
+export const updateJobPostById = async (jobPostId, updatedFormData) => {
+    try {
+        const reqUrl = `${backendUrl}/job/edit/${jobPostId}`;
+        const token = localStorage.getItem("token");
+        axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        const response = await axios.put(reqUrl, updatedFormData);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        // toast something went wrong please try after sometime
+    }
+};

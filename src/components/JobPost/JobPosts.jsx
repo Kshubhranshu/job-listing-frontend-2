@@ -1,85 +1,50 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { DEFAULT_SKILLS } from "../../utils/constants";
-import { createJobPost, updateJobPostById } from "../../apis/job";
-import styles from "./JobPost.module.css";
+import { useState } from "react";
+import styles from "./Style.module.css";
 
-export default function JobPost() {
-    const { state } = useLocation();
-    const [stateData] = useState(state?.jobDetails);
+export const JobPost = () => {
     const [formData, setFormData] = useState({
-        companyName: "" || stateData?.companyName,
-        logoUrl: "" || stateData?.logoUrl,
-        title: "" || stateData?.title,
-        description: "" || stateData?.description,
-        salary: "" || stateData?.salary,
-        location: "" || stateData?.location,
-        duration: "" || stateData?.duration,
-        locationType: "" || stateData?.locationType,
-        skills: stateData?.skills || [],
-        information: "" || stateData?.information,
-        salary: "" || stateData?.salary,
-        jobType: "" || stateData?.jobType,
-        location: "" || stateData?.location,
-        about: "" || stateData?.about,
+        companyName: "",
+        logoURL: "",
+        position: "",
+        salary: "",
+        jobType: "",
+        remote: "",
+        location: "",
+        description: "",
+        about: "",
+        skillsRequired: "",
+        information: "",
     });
 
     const handleChange = (event) => {
-        setFormData({ ...formData, [event.target.name]: event.target.value });
+        const { name, value } = event.target;
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: value,
+        }));
     };
 
-    const addSkills = (event) => {
-        const skill = event.target.value;
-        const actualSkills = formData.skills;
-        const filteredSkills = actualSkills.filter(
-            (element) => element == skill
-        );
+    const handleSubmit = async (event) => {
+        event.preventDefault();
 
-        if (!filteredSkills.length) {
-            const updatedSkills = [...formData.skills, skill];
-            setFormData({ ...formData, skills: updatedSkills });
-        }
-    };
-
-    const removeSkill = (skill) => {
-        const actualSkills = formData.skills;
-        const filteredSkills = actualSkills.filter(
-            (element) => element !== skill
-        );
-
-        setFormData({ ...formData, skills: filteredSkills });
-    };
-
-    const handleSubmit = async () => {
+        // Check if all fields are filled in
         if (
             !formData.companyName ||
-            !formData.logoUrl ||
-            !formData.title ||
+            !formData.logoURL ||
+            !formData.position ||
             !formData.salary ||
             !formData.jobType ||
+            !formData.remote ||
             !formData.location ||
             !formData.description ||
             !formData.about ||
-            !formData.skills ||
-            !formData.information ||
-            !formData.locationType
+            !formData.skillsRequired ||
+            !formData.information
         ) {
             alert("Please fill in all fields.");
-
             return;
         }
-
-        if (state?.edit) {
-            updateJobPostById(state?.id, formData);
-            return;
-        }
-
-        await createJobPost(formData);
     };
-
-    useEffect(() => {
-        console.log(formData);
-    }, [formData]);
 
     return (
         <div className={styles.container}>
@@ -106,38 +71,24 @@ export default function JobPost() {
                     <input
                         className={styles.input}
                         type="text"
-                        name="logoUrl"
-                        value={formData.logoUrl}
+                        name="logoURL"
+                        value={formData.logoURL}
                         onChange={handleChange}
                         placeholder="Enter logo URL"
                     />
                 </div>
 
                 <div className={styles.formGroup}>
-                    <label className={styles.label} htmlFor="title">
+                    <label className={styles.label} htmlFor="position">
                         Position:
                     </label>
                     <input
                         className={styles.input}
                         type="text"
-                        name="title"
-                        value={formData.title}
+                        name="position"
+                        value={formData.position}
                         onChange={handleChange}
                         placeholder="Enter job position"
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label className={styles.label} htmlFor="duration">
-                        Duration:
-                    </label>
-                    <input
-                        className={styles.input}
-                        type="text"
-                        name="duration"
-                        value={formData.duration}
-                        onChange={handleChange}
-                        placeholder="Enter job duration"
                     />
                 </div>
 
@@ -172,13 +123,13 @@ export default function JobPost() {
                 </div>
 
                 <div className={styles.selectGroup}>
-                    <label className={styles.label} htmlFor="locationType">
-                        Location Type:
+                    <label className={styles.label} htmlFor="remote">
+                        Remote:
                     </label>
                     <select
                         className={styles.select}
-                        name="locationType"
-                        value={formData.locationType}
+                        name="remote"
+                        value={formData.remote}
                         onChange={handleChange}
                     >
                         <option value="Remote">Remote</option>
@@ -225,6 +176,20 @@ export default function JobPost() {
                         placeholder="Enter company description"
                     />
                 </div>
+
+                <div className={styles.formGroup}>
+                    <label className={styles.label} htmlFor="skills">
+                        Skills:
+                    </label>
+                    <input
+                        className={styles.input}
+                        type="text"
+                        name="skillsRequired"
+                        value={formData.skillsRequired}
+                        onChange={handleChange}
+                        placeholder="skills"
+                    />
+                </div>
                 <div className={styles.formGroup}>
                     <label className={styles.label} htmlFor="skills">
                         Information:
@@ -238,39 +203,11 @@ export default function JobPost() {
                         placeholder="information"
                     />
                 </div>
-                <div className={styles.formGroup}>
-                    <label className={styles.label} htmlFor="skills">
-                        Skills:
-                    </label>
-                    <select
-                        className={styles.input}
-                        type="text"
-                        name="skills"
-                        onChange={addSkills}
-                    >
-                        <option disabled selected>
-                            Please select skills
-                        </option>
-                        {DEFAULT_SKILLS.map((element) => (
-                            <option>{element}</option>
-                        ))}
-                    </select>
-                </div>
-                <div>
-                    {formData?.skills?.map((element) => (
-                        <span>
-                            {element}&nbsp;
-                            <button onClick={() => removeSkill(element)}>
-                                X
-                            </button>
-                        </span>
-                    ))}
-                </div>
             </div>
             <button onClick={handleSubmit} className={styles.add}>
-                {state?.edit ? "Edit Job" : "+ Add Job "}
+                + Add Job
             </button>
             <button className={styles.cancel}>Cancel</button>
         </div>
     );
-}
+};

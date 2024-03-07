@@ -22,22 +22,45 @@
 
 .input {
     width: 60%;
+    border-radius: 6px;
+    padding: 0.5em 0.2em;
+    float: left;
+    border: 2px solid #c2c2c2;
+}
+
+.select {
+    border-radius: 6px;
+    padding: 0.5em 0.2em;
+    border: 2px solid #c2c2c2;
+    color: #adadad;
+    position: absolute;
+    left: 21vw;
+}
+
+.selectGroup {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cancel {
-    background: #FFFFFF;
-    border: 0.848485px solid #CECECE;
+    background: #ffffff;
+    border: 0.848485px solid #cecece;
     border-radius: 6.50784px;
     padding: 1em 2em;
-    margin-left: 15vw;
-    margin-right: 1vw;
+    float: right;
+
+    margin-right: 16px;
+    color: #adadad;
 }
 
 .add {
-    background: #ED5353;
+    background: #ed5353;
     border-radius: 6.50784px;
     padding: 1em 2em;
     border: none;
     color: white;
     font-weight: 600;
+    float: right;
 }
