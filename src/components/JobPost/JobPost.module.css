@@ -1,0 +1,43 @@
+.container {
+    box-sizing: border-box;
+    width: 50vw;
+    padding: 10vh 7vw;
+    position: relative;
+}
+
+.jobForm {}
+
+.formGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.input {
+    width: 60%;
+}
+
+.cancel {
+    background: #FFFFFF;
+    border: 0.848485px solid #CECECE;
+    border-radius: 6.50784px;
+    padding: 1em 2em;
+    margin-left: 15vw;
+    margin-right: 1vw;
+}
+
+.add {
+    background: #ED5353;
+    border-radius: 6.50784px;
+    padding: 1em 2em;
+    border: none;
+    color: white;
+    font-weight: 600;
+}
