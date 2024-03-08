@@ -37,3 +37,14 @@ export const updateJobPostById = async (jobPostId, updatedFormData) => {
         // toast something went wrong please try after sometime
     }
 };
+
+export const getAllJobPost = async (filter) => {
+    try {
+        const reqUrl = `${backendUrl}/job/all-jobs?title=${filter?.title}&skills=${filter?.skills}`;
+        const response = await axios.get(reqUrl);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        // toast something went wrong please try after sometime
+    }
+};
