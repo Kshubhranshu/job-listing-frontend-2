@@ -40,12 +40,6 @@ export default function Register() {
                 placeholder="Name"
             ></input>
             <input
-                type="checkbox"
-                onChange={(event) => console.log(event.target.checked)}
-                name="checkbox"
-                id=""
-            />
-            <input
                 className={styles.input}
                 name="email"
                 onChange={handleChange}
@@ -66,12 +60,24 @@ export default function Register() {
                 type={"password"}
                 placeholder="Password"
             ></input>
+
+            <span>
+                <input
+                    className={styles.grey}
+                    type="checkbox"
+                    onChange={(event) => console.log(event.target.checked)}
+                    name="checkbox"
+                    id="check1"
+                />
+                <label className={styles.grey} style={{ fontSize: "12px" }} htmlFor="check1">By creating an account, I agree to our terms of use and privacy policy</label>
+            </span>
             <button onClick={handleSubmit} className={styles.button}>
                 Create Account
             </button>
             {/* <Button>Create account</Button> */}
             <p className={styles.footer}>
-                Already have an account?
+                <span className={styles.grey}>Already have an account?
+                </span>
                 <span
                     className={styles.underline}
                     onClick={() => navigate("/login")}

@@ -4,9 +4,13 @@ import JobImage from "../../assets/job.png";
 
 export default function JobDetailsPage() {
     return (
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", maxHeight: "100vh", maxWidth: "100vw" }}>
             <JobPost />
-            <img style={{ maxHeight: "100vh", width: "50vw" }} src={JobImage} />
+            <div style={{ display: "flex", flexDirection: "column" }}>
+                <img style={{ position: "absolute", maxHeight: "115vh", width: "50vw", zIndex: 0 }} src={JobImage} />
+                <h1 style={{ position: "relative", color: "white", zIndex: 1, left: "50%" }}>Your Personal Job Finder</h1>
+            </div>
         </div>
+
     );
 }

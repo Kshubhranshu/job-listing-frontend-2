@@ -13,9 +13,13 @@ function App() {
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegisterPage />} />
                 <Route path="/job-details/:id" element={<JobDetailsPage />} />
-                <Route
+                {/* <Route
                     path="/job-post"
                     element={<ProtectedRoute Component={JobPostPage} />}
+                /> */}
+                <Route
+                    path="/job-post"
+                    element={<JobPostPage />}
                 />
                 <Route path="/" element={<HomePage />} />
             </Routes>
