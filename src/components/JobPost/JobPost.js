@@ -243,7 +243,7 @@ export default function JobPost() {
                         Skills:
                     </label>
                     <select
-                        className={styles.input}
+                        className={styles.select}
                         type="text"
                         name="skills"
                         onChange={addSkills}
