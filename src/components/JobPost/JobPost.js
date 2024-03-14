@@ -256,14 +256,14 @@ export default function JobPost() {
                         ))}
                     </select>
                 </div>
-                <div>
+                <div className={styles.skills}>
                     {formData?.skills?.map((element) => (
-                        <span>
+                        <div>
                             {element}&nbsp;
                             <button onClick={() => removeSkill(element)}>
                                 X
                             </button>
-                        </span>
+                        </div>
                     ))}
                 </div>
             </div>

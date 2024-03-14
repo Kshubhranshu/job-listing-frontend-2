@@ -4,8 +4,8 @@
   padding: 10vh 7vw;
   position: relative;
 }
-.jobForm {
-}
+
+.jobForm {}
 
 .formGroup {
   display: flex;
@@ -14,6 +14,7 @@
   font-size: 1.5rem;
   margin: 1rem 0;
 }
+
 .h1 {
   font-size: 2.5rem;
   font-weight: 700;
