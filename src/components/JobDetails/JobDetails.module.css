@@ -1,6 +1,7 @@
-/* body {
+body {
   background-color: #ffefef;
-} */
+}
+
 
 .nav {
   width: 100vw;
@@ -45,10 +46,9 @@
 
 .container {
   width: 80vw;
-  position: fixed;
-  top: 15vh;
-  left: 10vw;
-  margin-right: auto;
+  /* position: fixed; */
+  margin: 0 auto;
+  margin-top: 10vh;
   box-sizing: border-box;
   padding: 2rem 1rem;
   background-color: white;
@@ -59,14 +59,21 @@
 
 .containerBottom {
   width: 80vw;
-  margin: 30vh auto;
+  margin: 0 auto;
+  margin-top: 10vh;
   background-color: white;
   box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.1);
-  padding: 2rem 1rem;
+  padding: 2rem 3rem;
   box-sizing: border-box;
 }
 
 .lightText {
+  color: #595959;
+}
+
+.lightText2 {
+  margin-top: 0px;
+  margin-left: 2px;
   color: #999999;
 }
 
@@ -82,7 +89,7 @@
 
 .locationText {
   color: #ed5353;
-  margin-top: 0.5rem;
+  margin: 0rem;
 }
 
 .info {
@@ -92,26 +99,22 @@
 .info h2 {
   font-weight: 700;
   font-size: 20px;
-  margin-bottom: 0.6rem;
-}
-
-.info p {
-  font-size: 18px;
+  margin-bottom: 1.5rem;
 }
 
 .perks {
   display: flex;
-  gap: 4rem;
   margin-top: 1rem;
 }
 
+
 .skill {
+  font-size: 0.9rem;
   background-color: #ffeeee;
-  color: black;
-  padding: 0.6rem;
+  color: #595959;
+  padding: 0.6rem 1rem;
   border-radius: 9999px;
   margin-right: 1rem;
-  margin-top: 0.5rem;
   display: inline;
 }
 
