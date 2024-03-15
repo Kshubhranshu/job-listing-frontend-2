@@ -24,8 +24,8 @@ const JobDetails = ({ }) => {
     const [isEditable, setIsEditable] = useState(false);
 
     useEffect(() => {
-        // isAllowedToEdit();
-        // fetchJobDetailsById();
+        isAllowedToEdit();
+        fetchJobDetailsById();
     }, []);
 
     const fetchJobDetailsById = async () => {
@@ -63,39 +63,42 @@ const JobDetails = ({ }) => {
                                 {jobDetails?.posted} • {jobDetails.jobType}
                             </p>
                         </div>
-                        <div className={styles.heading}>
+                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                            <div className={styles.heading}>
+                                <div>
+                                    <p
+                                        style={{
+                                            margin: "0px"
+                                        }}
+                                        className={styles.boldText}>
+                                        {jobDetails.title}
+                                    </p>
+                                    <p className={styles.locationText}>
+                                        {jobDetails.location}
+                                    </p>
+                                </div>
+                            </div>
                             <div>
-                                <p
-                                    style={{
-                                        margin: "0px"
-                                    }}
-                                    className={styles.boldText}>
-                                    {jobDetails.title}
-                                </p>
-                                <p className={styles.locationText}>
-                                    {jobDetails.location}
-                                </p>
+                                {
+                                    isEditable && <button
+                                        onClick={() => {
+                                            navigate("/job-post", {
+                                                state: {
+                                                    id: jobDetails._id,
+                                                    jobDetails: jobDetails,
+                                                    edit: true,
+                                                },
+                                            });
+                                        }}
+                                        className={styles.edit}
+                                    >
+                                        Edit Job
+                                    </button>
+                                }
                             </div>
                         </div>
-                        <div>
-                            {
-                                isEditable && <button
-                                    onClick={() => {
-                                        navigate("/job-post", {
-                                            state: {
-                                                id: jobDetails._id,
-                                                jobDetails: jobDetails,
-                                                edit: true,
-                                            },
-                                        });
-                                    }}
-                                    className={styles.edit}
-                                >
-                                    Edit Job
-                                </button>
-                            }
 
-                        </div>
+
                         <div className={styles.perks}>
                             <div>
                                 <div
