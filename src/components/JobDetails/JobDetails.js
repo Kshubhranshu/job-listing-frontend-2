@@ -24,8 +24,8 @@ const JobDetails = ({ }) => {
     const [isEditable, setIsEditable] = useState(false);
 
     useEffect(() => {
-        isAllowedToEdit();
-        fetchJobDetailsById();
+        // isAllowedToEdit();
+        // fetchJobDetailsById();
     }, []);
 
     const fetchJobDetailsById = async () => {

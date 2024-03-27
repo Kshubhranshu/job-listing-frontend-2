@@ -1,1 +1,1 @@
-export const DEFAULT_SKILLS = ["html", "css", "js", "react"];
+export const DEFAULT_SKILLS = ["Frontend", "CSS", "JavaScript"];
