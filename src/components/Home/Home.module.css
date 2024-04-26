@@ -1,32 +1,119 @@
+.header {
+    background-color: #ED5353;
+    color: white;
+    margin: 0vh 0vw;
+    padding: 3vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.shape1 {
+    position: absolute;
+    top: -3vh;
+    left: 40vw;
+}
+
+.shape2 {
+    height: 17.5vh;
+    position: absolute;
+    top: -3vh;
+    left: 70vw;
+}
+
+
+button.login {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+button.register {
+    background-color: white;
+    color: #ED5353;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+button.filter {
+    background: #ED5353;
+    border-radius: 6px;
+    padding: 0.7em 2em;
+    border: none;
+    color: white;
+}
+
+button.clear {
+    background: white;
+    border-radius: 6px;
+    padding: 0.7em 2em;
+    border: none;
+    color: #ED5353;
+    font-weight: 600;
+}
+
+button.job {
+    background: #ED5353;
+    border-radius: 6px;
+    padding: 0.7em 2em;
+    border: none;
+    color: white;
+}
+
+
+
+input {
+    all: unset;
+}
+
+select {
+    background-color: unset;
+    font-size: 1rem;
+    color: darkgray;
+    border: 2px solid lightgray;
+    padding: 1.5vh 2vw;
+    border-radius: 6px;
+}
+
 .container {
-    width: 80vw;
-    position: fixed;
-    top: 15vh;
+    width: 75vw;
+    margin: auto;
+    margin-top: 5vh;
+    top: 25vh;
     left: 10vw;
     margin-right: auto;
     box-sizing: border-box;
     padding: 2rem 1rem;
     background-color: white;
-    box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0px 0px 22px 4px #FF202040;
     z-index: 2;
     text-align: center;
 }
 
-.edit {
-    background: #ED5353;
-    border-radius: 6.50784px;
-    padding: 1em 2em;
-    border: none;
-    color: white;
-    font-weight: 600;
-}
 
 .containerTop {
     text-align: left;
     margin-bottom: 2rem;
+    /* padding: 0 5vw; */
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    border: 2px solid lightgray;
+    border-radius: 6px;
+    text-indent: 5px;
 }
 
 .containerBottom {
+    padding: 0vh 4vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,11 +128,12 @@
 }
 
 .list {
-    width: 80vw;
-    margin: 7vh auto 12px auto;
+    width: 75vw;
+    margin: 6vh auto 12px auto;
     background-color: white;
-    box-shadow: 0px 4px 23px 2px rgba(0, 0, 0, 0.1);
-    padding: 2rem 1rem;
+    box-shadow: 0px 0px 22px 4px #FF202040;
+    border-left: 5px solid red;
+    padding: 1rem 1rem;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -54,16 +142,17 @@
 
 .listLeft {
     display: flex;
+    align-items: start;
 }
 
 .infoLeft {
-    margin: 1rem;
+    margin: 0rem 1rem;
 }
 
 .position {
     font-size: 20px;
     font-weight: 600;
-    margin-bottom: 1.1rem;
+    margin: 0px;
 }
 
 .extraInfo {
@@ -80,26 +169,40 @@
     color: #ED5353;
 }
 
+.skills {
+    display: flex;
+    gap: 5px;
+}
+
 .skill {
     background-color: #FFEEEE;
     color: black;
     padding: 0.6rem;
-    border-radius: 6px;
-    margin-right: 1rem;
+    border-radius: 3px;
 }
 
 .btnGroup {
+    width: 15%;
     display: flex;
-    margin-top: 1rem;
-    justify-content: space-evenly;
+    margin-top: 0.5rem;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.btnGroup2 {
+    width: 100%;
+    display: flex;
+    margin-top: 0.5rem;
+    justify-content: flex-end;
 }
 
 .view {
-    background-color: transparent;
-    border: 1px solid #ED5353;
+    background-color: #ED5353;
+    color: #FFEEEE;
+    border: 0px;
     border-radius: 6px;
-    padding: 1em 2em;
-    color: #ED5353;
+    margin-top: 1vh;
+    /* padding: 0.5rem 2rem; */
     font-weight: 600;
 }
 
@@ -113,16 +216,23 @@
 
 
 .chip {
+    padding-left: 4px;
     box-sizing: border-box;
     background: #FFEEEE;
-    color: black;
-    padding: 0.6rem;
+    border-radius: 0px 1px 1px 0px;
 }
 
 .cross {
     background-color: #ED5353;
-    font-weight: 600;
+    /* font-weight: 600; */
     margin-left: 5px;
-    padding: 2px;
+    padding: 1px 5px;
     color: white;
+    border-radius: 0px 1px 1px 0px;
+}
+
+.logo {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 12px;
 }
